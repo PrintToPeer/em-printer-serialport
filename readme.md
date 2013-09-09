@@ -1,10 +1,10 @@
-# em-serialport
+# em-printer-serialport
 
-Eventmachine compatible asynchronous, ruby-serialport library.
+Eventmachine compatible asynchronous, ruby-serialport library. A fork of em-serialport that is maintained by PrintToPeer.
 
 ## Installation
 
-    gem install em-serialport
+    gem install em-printer-serialport
 
 ## Usage
 
@@ -12,7 +12,7 @@ If you are on Mac, you need to set up a virtual USB serial port by installing a 
 
     EM.run do
       serial = EventMachine.open_serial('/dev/tty.usbserial-xxxxxxxx', 9600, 8, 1, 0)
-      serial.send_data "foo"
+      serial.send_data 'foo'
 
       serial.on_data do |data|
         # do something with data

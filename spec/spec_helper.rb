@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'em-serialport'
+require 'em-printer-serialport'
 
 RSpec.configure do |config|
 end

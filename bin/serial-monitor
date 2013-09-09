@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'bundler/setup'
-require 'em-serialport'
+require 'em-printer-serialport'
 
 EM.run do
   if ARGV.size < 1
@@ -12,7 +12,7 @@ EM.run do
 
   serial = EventMachine.open_serial(ARGV[0], 9600, 8, 1, SerialPort::NONE)
   serial.on_data do |data|
-    puts "received: " + data.to_s
+    puts 'received: ' + data.to_s
   end
 
   Thread.new do
@@ -21,6 +21,6 @@ EM.run do
     end
   end
 
-  puts "Serial monitor initialized. Enter data followed by a newline character."
-  puts "Ctrl-C to stop"
+  puts 'Serial monitor initialized. Enter data followed by a newline character.'
+  puts 'Ctrl-C to stop'
 end
